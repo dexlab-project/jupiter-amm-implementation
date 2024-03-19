@@ -17,6 +17,7 @@ use super::account_meta_from_token_swap::TokenSwap;
 
 mod spl_token_swap_programs {
     use super::*;
+    pub const DEXLAB: Pubkey = pubkey!("DSwpgjMvXhtGn6BsbqmacdBZyfLj6jSWf3HJpdJtmg6N");
     pub const ORCA_V1: Pubkey = pubkey!("DjVE6JNiYqPL2QXyCUUh8rNjHrbz9hXHNYt99MQ59qw1");
     pub const ORCA_V2: Pubkey = pubkey!("9W959DqEETiGZocYWCQPaJ6sBmUzgfxXfqGeTEdp3aQP");
     pub const STEPN: Pubkey = pubkey!("Dooar9JkhdZ7J3LHN3A7YCuoGRUggXhQaG4kijfLGU2j");
@@ -36,6 +37,7 @@ mod spl_token_swap_programs {
 lazy_static! {
     pub static ref SPL_TOKEN_SWAP_PROGRAMS: HashMap<Pubkey, String> = {
         let mut m = HashMap::new();
+        m.insert(spl_token_swap_programs::DEXLAB, "Dexlab AMM".into());
         m.insert(spl_token_swap_programs::ORCA_V1, "Orca v1".into());
         m.insert(spl_token_swap_programs::ORCA_V2, "Orca v2".into());
         // m.insert(spl_token_swap_programs::STEP, "Step".into()); We need to support the STEP state
